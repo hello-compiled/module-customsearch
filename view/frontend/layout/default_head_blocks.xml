@@ -1,0 +1,6 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework/View/Layout/etc/page_configuration.xsd">
+	<head>
+		<css src="Compiled_CustomSearch::css/custom-search.css"/>
+		<script src="Compiled_CustomSearch::js/search.js"/>
+	</head>
+</page>

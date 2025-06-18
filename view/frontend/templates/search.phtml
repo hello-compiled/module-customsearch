@@ -1,0 +1,38 @@
+<?php
+/** @var $block \Magento\Framework\View\Element\Template */
+$helper = $this->helper('Magento\Search\Helper\Data');
+?>
+<div class="block block-search compiled-search-wrapper">
+	<form id="search_mini_form"
+		  class="form minisearch search-form flex items-center bg-white border border-gray-300 rounded-full px-3 py-1 w-full max-w-md transition-all duration-300"
+		  action="<?= $helper->getResultUrl() ?>"
+		  method="get"
+		  autocomplete="off">
+
+		<button type="submit" class="search-button mr-2 text-gray-500 hover:text-black">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none"
+				 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<circle cx="11" cy="11" r="8"/>
+				<line x1="21" y1="21" x2="16.65" y2="16.65"/>
+			</svg>
+		</button>
+
+		<input type="text"
+			   id="search"
+			   name="q"
+			   placeholder="Search..."
+			   class="compiled-input w-full bg-transparent focus:outline-none text-sm"
+			   value="<?= $block->escapeHtml($helper->getEscapedQueryText()) ?>" />
+	</form>
+
+	<!-- Optional autocomplete dropdown -->
+	<div class="search-autocomplete absolute top-full left-0 w-full z-50"></div>
+</div>
+
+<script type="text/x-magento-init">
+{
+	"*": {
+		"Compiled_CustomSearch/js/search": {}
+	}
+}
+</script>

@@ -1,0 +1,249 @@
+
+input[type="text"], input[type="password"], input[type="url"], input[type="tel"], input[type="search"], input[type="number"], input[type*="date"], input[type="email"]{
+	background: unset;
+	background-clip: unset;
+	border: unset;
+	border-radius: 1px;
+	font-family: unset;
+	font-size: unset;
+	height: unset;
+	line-height: unset;
+	padding: unset;
+	vertical-align: unset;
+	width: unset;
+	box-sizing: unset;
+}
+
+._keyfocus *:focus, input:not([disabled]):focus, textarea:not([disabled]):focus, select:not([disabled]):focus {
+	box-shadow: none;
+}
+
+.block-search input {
+	left: unset!important;
+	margin: unset!important;
+}
+
+.compiled-search-wrapper {
+	float: right;
+	margin-right: 20px;
+	max-width: 300px;
+}
+
+.compiled-search-wrapper .form {
+	display: flex;
+	align-items: center;
+}
+
+.compiled-search-wrapper .search-button:focus,
+.compiled-search-wrapper .search-button:active {
+	border: none !important;
+	box-shadow: none !important;
+	outline: none !important;
+	color: inherit !important;
+}
+#search_mini_form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 42px;
+	height: 42px;
+	border-radius: 50%;
+	background: black;
+}
+
+.search-form button:hover {
+	background: transparent;
+	border: none;
+}
+#search:focus {
+	box-shadow: none;
+}
+/*  Search Form */
+.search-form {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+
+/*  Search Button (Fixed Position) */
+.search-button {
+	background: transparent;
+border: none;
+cursor: pointer;
+padding: 5px;
+display: flex;
+align-items: center;
+transition: background 0.3s ease-in-out;
+z-index: 2; /* Keeps it above the expanding input */
+}
+
+/* 🔍 Search Icon */
+.search-button svg {
+	width: 24px;
+	height: 24px;
+	stroke: black;
+	transition: stroke 0.3s ease-in-out;
+}
+
+/* 🔍 Active State */
+.search-button.active {
+	background: transparent;
+}
+
+.search-button.active svg {
+	stroke: black;
+}
+
+
+#search {
+	position: absolute;
+	right: 0;
+	width: 0px;
+	opacity: 0;
+	padding: 0;
+	border: none;
+	transition: width 0.4s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+
+#search.active {
+	width: 200px;
+	opacity: 1;
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	top: 0;
+	height: 42px;
+}
+
+/* 🔹 Prevent layout shifting */
+.search-form {
+	min-width: 40px;
+	display: flex;
+	align-items: center;
+}
+
+
+/* 🔹 HEADER STRUCTURE */
+.header-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	width: 100%;
+	max-width: 1200px;
+	padding: 10px 20px;
+}
+
+/* 🔹 LOGO - Ensure it doesn’t push elements */
+.header-top .logo {
+	flex-grow: 0; /* Prevents unnecessary expansion */
+	text-align: center;
+	position: relative;
+	z-index: 2;
+}
+
+/* 🔹 HEADER ICONS - Ensures search & icons are properly positioned */
+.header-icons {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	position: relative;
+	z-index: 2;
+}
+
+/* 🔹 SEARCH FORM */
+.search-form {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+/* 🔹 SEARCH BUTTON (STATIC) */
+.search-button {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	transition: background 0.3s ease-in-out;
+	z-index: 11;
+	position: relative;
+}
+
+/* 🔹 SEARCH ICON */
+.search-button svg {
+	width: 24px;
+	height: 24px;
+	stroke: white;
+	transition: stroke 0.3s ease-in-out;
+}
+
+/* 🔹 SEARCH ICON - ACTIVE */
+.search-button.active {
+	
+}
+
+.search-button.active svg {
+	stroke: black;
+}
+
+/* 🔹 SEARCH INPUT - Hidden Initially */
+#search {
+	width: 0;
+	opacity: 0;
+	padding: 0;
+	border: none;
+	font-size: 14px;
+	transition: width 0.4s ease-in-out, opacity 0.3s ease-in-out;
+	position: absolute;
+	right: 0; /* Expands towards the logo */
+	background: white;
+	z-index: 1;
+	border-radius: 100px;
+}
+
+/* 🔹 SEARCH INPUT - EXPANDED */
+#search.active {
+	width: 220px; /* Adjust width */
+	opacity: 1;
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	z-index: 10;
+}
+
+
+/* Hide by default */
+.mobile-search-wrapper {
+	display: none;
+}
+
+/* Show only on screens <= 768px */
+@media (max-width: 768px) {
+	
+	.search-form {
+		margin-top: unset;
+	}
+	.mobile-search-wrapper {
+		display: block;
+		padding: 1rem;
+		border-top: 1px solid #ddd;
+	}
+
+	.mobile-search-wrapper form {
+		display: flex;
+	}
+
+	.mobile-search-wrapper input {
+		flex: 1;
+		padding: 0.5rem;
+	}
+
+	.mobile-search-wrapper button {
+		padding: 0.5rem;
+		background-color: #000;
+		color: #fff;
+		border: none;
+	}
+}
