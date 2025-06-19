@@ -219,6 +219,10 @@ z-index: 2; /* Keeps it above the expanding input */
 	display: none;
 }
 
+.block-search {
+	width: unset!important;
+}
+
 /* Show only on screens <= 768px */
 @media (max-width: 768px) {
 	
@@ -245,5 +249,12 @@ z-index: 2; /* Keeps it above the expanding input */
 		background-color: #000;
 		color: #fff;
 		border: none;
+	}
+	.compiled-search-wrapper {
+		margin-right: 0; 
+	}
+	.block-search {
+		margin-top: 0!important;
+		width: unset!important;
 	}
 }
